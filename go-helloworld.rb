@@ -5,20 +5,20 @@
 class GoHelloworld < Formula
   desc ""
   homepage ""
-  version "0.0.5"
+  version "0.0.6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.5/go-helloworld_0.0.5_Darwin_x86_64.tar.gz"
-    sha256 "e50e00a9871d6543ddc04b5a7cfe558368f9045d97eb34a8de9c2a58dc76172b"
+    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.6/go-helloworld_0.0.6_Darwin_x86_64.tar.gz"
+    sha256 "e64a7a05bad8b14e32b18070fb06385c1d558a4e2da242a5c021f9b328219d4d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.5/go-helloworld_0.0.5_Linux_x86_64.tar.gz"
-    sha256 "5f910bfab011a503a9949fda6879c7dd3ec07c770607bd5ec3fde3314d3d3b38"
+    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.6/go-helloworld_0.0.6_Linux_x86_64.tar.gz"
+    sha256 "122f2241061ed0f8824898acdfa6eb59134681e0cb2aac5770317923b485b02c"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.5/go-helloworld_0.0.5_Linux_arm64.tar.gz"
-    sha256 "3f6690925117b370ab48d793669749ffd5aef4c101aa7bcbf77577779627ecfe"
+    url "https://github.com/pthomison/go-helloworld/releases/download/0.0.6/go-helloworld_0.0.6_Linux_arm64.tar.gz"
+    sha256 "ac36816bc022749b594b99873169f0226520fe4b56fd56fe5fe413bf79328eb6"
   end
 
   def install
