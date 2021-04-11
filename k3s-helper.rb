@@ -5,24 +5,20 @@
 class K3sHelper < Formula
   desc ""
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.1/k3s-helper_0.0.1_Darwin_x86_64.tar.gz"
-    sha256 "2a810bd71d7e8a9109ea5881d4fde7093a774ea126fa0363bb344a1d8e9c8089"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.1/k3s-helper_0.0.1_Darwin_arm64.tar.gz"
-    sha256 "58c6237e068fca75818e443d7ef8a3d965018f9788a1ed1de40f4e58a8ff695e"
+    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.2/k3s-helper_0.0.2_Darwin_x86_64.tar.gz"
+    sha256 "a2bbaede11ba438aac132f7d795a89874d7088b8cfae42634161a206e094e64e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.1/k3s-helper_0.0.1_Linux_x86_64.tar.gz"
-    sha256 "71de2e7c5e09c1feea5b371bd3f88c3e193eab43233ba00fd641267b98b1bce6"
+    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.2/k3s-helper_0.0.2_Linux_x86_64.tar.gz"
+    sha256 "97c00561f1cd7bd4b8854f5fd284e984c80d9d1f19aae0722f475ff34aff9195"
   end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.1/k3s-helper_0.0.1_Linux_arm64.tar.gz"
-    sha256 "78e6e5464c9914ec655864735d0aa9402091a950e2ac1b4aeaf723034e3388ce"
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.2/k3s-helper_0.0.2_Linux_armv6.tar.gz"
+    sha256 "0163b486311516d7650a52d5d2729fa590cf7ccff299f4b9f44e7ae96a8b6d0c"
   end
 
   def install
