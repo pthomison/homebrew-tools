@@ -5,16 +5,16 @@
 class K3sHelper < Formula
   desc ""
   homepage ""
-  version "0.0.5"
+  version "0.0.6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.5/k3s-helper_0.0.5_Darwin_x86_64.tar.gz"
-    sha256 "e2f9c3de802fb0c6732dcb732c7cae66e8b196fd15e89478ac31b6c004f38459"
+    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.6/k3s-helper_0.0.6_Darwin_x86_64.tar.gz"
+    sha256 "120ac2f3a737b5208f8a3843f1289388958abd6086430876a544b6b922df6154"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.5/k3s-helper_0.0.5_Linux_x86_64.tar.gz"
-    sha256 "ed8424002b26935fdc032ef36f91089b9ebefb6bafb341592ee8907a1e2475f2"
+    url "https://github.com/pthomison/k3s-helper/releases/download/0.0.6/k3s-helper_0.0.6_Linux_x86_64.tar.gz"
+    sha256 "e0b5c6963b40fe09e09835278ced56d4cd455a90e58042ba44594f0c146f80cd"
   end
 
   def install
