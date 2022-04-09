@@ -5,20 +5,20 @@
 class SsmK8sInjector < Formula
   desc ""
   homepage ""
-  version "0.0.2"
+  version "0.0.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.2/ssm-k8s-injector_0.0.2_Darwin_x86_64.tar.gz"
-      sha256 "21930eae370079e0077d42e7f4c23f5d5714c1e03a6a3afe39b2fa8afbe50c4e"
+    if Hardware::CPU.arm?
+      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.4/ssm-k8s-injector_0.0.4_Darwin_arm64.tar.gz"
+      sha256 "d177924b7040e641eaee7cfe10ce1ffeb98db6ec62b313f2acf1fb9855b54a07"
 
       def install
         bin.install "ssm-k8s-injector"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.2/ssm-k8s-injector_0.0.2_Darwin_arm64.tar.gz"
-      sha256 "a787c1c81c18e0ff3e528d57ae83d35975b6bece7c774ededdf1ac4607d1857e"
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.4/ssm-k8s-injector_0.0.4_Darwin_x86_64.tar.gz"
+      sha256 "50f400ed0e0e9f7ee369e00699f732b84fbbf42bba6351c2e79dcb6557096ae2"
 
       def install
         bin.install "ssm-k8s-injector"
@@ -28,24 +28,24 @@ class SsmK8sInjector < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.2/ssm-k8s-injector_0.0.2_Linux_armv6.tar.gz"
-      sha256 "37ac28bbb82b64fb4f77b3be80ca30ba19bc8f36de6bef989a2acd0c68351f7b"
-
-      def install
-        bin.install "ssm-k8s-injector"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.2/ssm-k8s-injector_0.0.2_Linux_arm64.tar.gz"
-      sha256 "d58aad55ca831a89083fe9a606ea88047393b902c1f01d54d2965b8fcf930086"
+      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.4/ssm-k8s-injector_0.0.4_Linux_armv6.tar.gz"
+      sha256 "e23a36e3ac0a08910ee0368366d75697fd38383405ffbf8037ac1378e9967ed5"
 
       def install
         bin.install "ssm-k8s-injector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.2/ssm-k8s-injector_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "c44edffca6a6be237b9d5b9f9a32c5835f7e191a6ce71f8104da9d873443882e"
+      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.4/ssm-k8s-injector_0.0.4_Linux_x86_64.tar.gz"
+      sha256 "8c09eb199190e2b5e293a7a41aed4ff070c59d4ed8be60aebe0e5074b53616ec"
+
+      def install
+        bin.install "ssm-k8s-injector"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/ssm-k8s-injector/releases/download/0.0.4/ssm-k8s-injector_0.0.4_Linux_arm64.tar.gz"
+      sha256 "5ef6301d2f17d4f4d27da2dafd88495475bab2e3278a83f148b1e8d95d995967"
 
       def install
         bin.install "ssm-k8s-injector"
