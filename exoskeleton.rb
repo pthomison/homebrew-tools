@@ -5,20 +5,20 @@
 class Exoskeleton < Formula
   desc ""
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.1/exoskeleton_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "8c6c04a1cefd0ff686d98e1b404b4c55f8345b333debce068b084b58c7f59cfe"
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.2/exoskeleton_0.0.2_Darwin_x86_64.tar.gz"
+      sha256 "af842d867853c7923708a39f2ab040d97364d45c226fff444ceecb98e55eaf4d"
 
       def install
         bin.install "exoskeleton"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.1/exoskeleton_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "3371c31cadb1506868c8fd20258e1bb51b73e5c23d3a26106eede79753234acb"
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.2/exoskeleton_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "c4eced283fad5c39082211ddaf55ebecb76e21068f39ca999dd29389fa5cbb9e"
 
       def install
         bin.install "exoskeleton"
@@ -28,24 +28,24 @@ class Exoskeleton < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.1/exoskeleton_0.0.1_Linux_armv6.tar.gz"
-      sha256 "7422cff618bfeee18cbb745b3a7f1b3f25f0e7725337be19b35cc36027ec8089"
-
-      def install
-        bin.install "exoskeleton"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.1/exoskeleton_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "8afe81e0039ee47d2619f2dac005781ab112f1d8e400a9d9c5110772d5a4f128"
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.2/exoskeleton_0.0.2_Linux_armv6.tar.gz"
+      sha256 "5b3022f6d07b00d815e3f8bf15263e5ab36c5c11723e715beeb0de3ee78edcf5"
 
       def install
         bin.install "exoskeleton"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.1/exoskeleton_0.0.1_Linux_arm64.tar.gz"
-      sha256 "c3242bc7841564e2354ac028438477e86a63b8fc0bfa37fa7a4711df74678d75"
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.2/exoskeleton_0.0.2_Linux_arm64.tar.gz"
+      sha256 "e9ddc2970cf072553222a59a8416208ae6f6d382db6a34115b3aa5da3fed0a39"
+
+      def install
+        bin.install "exoskeleton"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.2/exoskeleton_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "96a46fd9515356366de1bf7d82df542a63709b8a907cbbe21da6b9cf16a1a951"
 
       def install
         bin.install "exoskeleton"
