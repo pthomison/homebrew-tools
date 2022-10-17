@@ -5,20 +5,20 @@
 class Pricewatcher < Formula
   desc ""
   homepage ""
-  version "0.0.22"
+  version "0.0.24"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.22/pricewatcher_0.0.22_Darwin_x86_64.tar.gz"
-      sha256 "209b7a823eb9b03adb40a66ed6149e0cf1a8c3f5bb77e9aa21f5846e4823103c"
+    if Hardware::CPU.arm?
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.24/pricewatcher_0.0.24_Darwin_arm64.tar.gz"
+      sha256 "6311fe03390e618b875c4bea0e7fc3af369f9ce41a42061db0b56e44e5e827c8"
 
       def install
         bin.install "pricewatcher"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.22/pricewatcher_0.0.22_Darwin_arm64.tar.gz"
-      sha256 "9c6790b39366064e48afdfddd24920ecb21cdfa70b832fbb8a9800d3cdff6037"
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.24/pricewatcher_0.0.24_Darwin_x86_64.tar.gz"
+      sha256 "bd1bbcddbcea02b89dd0cbf43d6fe0982e63e7c83642e0546c40d37dfdab9b09"
 
       def install
         bin.install "pricewatcher"
@@ -27,25 +27,25 @@ class Pricewatcher < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.22/pricewatcher_0.0.22_Linux_armv6.tar.gz"
-      sha256 "4489206f826c1bd180ec0c5597de24ea11134f824dc3de453bc581625f991e62"
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.24/pricewatcher_0.0.24_Linux_x86_64.tar.gz"
+      sha256 "438f7e97307c344d719e0b41ebd3b3d39b528343e412caeb1128c420e32d9dc7"
 
       def install
         bin.install "pricewatcher"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.22/pricewatcher_0.0.22_Linux_x86_64.tar.gz"
-      sha256 "7ab35715a3f75eece9ab6e44d1e4ade2e74d83f3ef2f90f0071acad8dce7e524"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.24/pricewatcher_0.0.24_Linux_armv6.tar.gz"
+      sha256 "4b4406fd77f439aa46f94f443c15201dae382c8f1b3e70329ca644feb832c6cf"
 
       def install
         bin.install "pricewatcher"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.22/pricewatcher_0.0.22_Linux_arm64.tar.gz"
-      sha256 "bf697d28c4651cd3d8eef0f3281f683b778745ca86ebcd96d433ec51af8e8e32"
+      url "https://github.com/pthomison/pricewatcher/releases/download/v0.0.24/pricewatcher_0.0.24_Linux_arm64.tar.gz"
+      sha256 "8665532948f2dad133c97b0e4fe7ed90450d8c4729ae0dc68fb63d8cd49014e6"
 
       def install
         bin.install "pricewatcher"
