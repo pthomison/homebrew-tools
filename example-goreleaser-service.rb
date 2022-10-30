@@ -5,20 +5,20 @@
 class ExampleGoreleaserService < Formula
   desc ""
   homepage ""
-  version "0.0.10"
+  version "0.0.12"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.10/example-goreleaser-service_0.0.10_Darwin_arm64.tar.gz"
-      sha256 "e52bb093ce69581f653c79bf9a3be8ea76f0ee628b0604bb13bd19e200398792"
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Darwin_x86_64.tar.gz"
+      sha256 "17b76799a3f7741edea99fb983efe7b4afb7352ad418cd4739f3fef6d6f7529e"
 
       def install
         bin.install "example-goreleaser-service"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.10/example-goreleaser-service_0.0.10_Darwin_x86_64.tar.gz"
-      sha256 "9bb9fac71078c30bb28a23fc0df09f2516a573cf3c66fe6c2128271a57104ad1"
+    if Hardware::CPU.arm?
+      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Darwin_arm64.tar.gz"
+      sha256 "a5f6c62c7c77704eabc0a9642152e33b5e4c201c4f136aff89818f9e390c581b"
 
       def install
         bin.install "example-goreleaser-service"
@@ -28,24 +28,24 @@ class ExampleGoreleaserService < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.10/example-goreleaser-service_0.0.10_Linux_armv6.tar.gz"
-      sha256 "31114f25908cf1c656d0a330bc5acb6520b26c1289ba241669e9515c6399d62f"
-
-      def install
-        bin.install "example-goreleaser-service"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.10/example-goreleaser-service_0.0.10_Linux_x86_64.tar.gz"
-      sha256 "6058344e8eaf79944b4683a3ff1a8bec8444c33f8456115d2f5a0721f0e7d93c"
+      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_armv6.tar.gz"
+      sha256 "a6ddebc7afc1fd8ce48d450bbc5c9933a965f84f9afa7c6d7d3c10e63a892bd7"
 
       def install
         bin.install "example-goreleaser-service"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.10/example-goreleaser-service_0.0.10_Linux_arm64.tar.gz"
-      sha256 "b34c9af7570db6b44e3274707dfadcd476ba6ae87da7e342c9fec6a9d975574e"
+      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_arm64.tar.gz"
+      sha256 "2aa9697c12274d640dd83ac73459b9805b237f42fb1c4b2894f1ffaf34bf47cb"
+
+      def install
+        bin.install "example-goreleaser-service"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_x86_64.tar.gz"
+      sha256 "bacff06f47a2a49993694940a7db7f332422ced9ee695929de21233631fba6d4"
 
       def install
         bin.install "example-goreleaser-service"
