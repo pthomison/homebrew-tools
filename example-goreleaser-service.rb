@@ -5,56 +5,62 @@
 class ExampleGoreleaserService < Formula
   desc ""
   homepage ""
-  version "0.0.13"
+  version "0.0.14"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Darwin_x86_64.tar.gz"
-      sha256 "164ca027ba3b0e73b2b15f0083d02dea9f70fe0f98ccc13e4e0917e18400e8e7"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.14/example-goreleaser-service_0.0.14_Darwin_x86_64.tar.gz"
+      sha256 "d1dd29620c21c4f3aa0b841576ec8ce229a023fc5ffb28617f087ec0dc3008fa"
 
       def install
         bin.install "example-goreleaser-service"
-        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Darwin_arm64.tar.gz"
-      sha256 "a540228f9a9d373e4c35f5a132132073139289e3643ec10b937528e25ecc72c6"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.14/example-goreleaser-service_0.0.14_Darwin_arm64.tar.gz"
+      sha256 "4a1efe9ea05ec2123daf2833d95d5642f6b24c282bbe06813848a33a176a6129"
 
       def install
         bin.install "example-goreleaser-service"
-        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_armv6.tar.gz"
-      sha256 "3599ac65448b4f1602b7639cd6f062700b4a4c51b72a7c73cf916a7dfb5fb700"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.14/example-goreleaser-service_0.0.14_Linux_arm64.tar.gz"
+      sha256 "fe05374af194fb93a3d1da7c649dd40be0cb814dd0f4bfb9843f2039a35c066f"
 
       def install
         bin.install "example-goreleaser-service"
-        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_x86_64.tar.gz"
-      sha256 "be95152d502110e842ca00ab97cbd388d88b675667636df0dd6d218c46710f9a"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.14/example-goreleaser-service_0.0.14_Linux_x86_64.tar.gz"
+      sha256 "fa945d86bd53768369e493a67e3e2f253bb3ea31b83360dd2d6f3d26e97a73ba"
 
       def install
         bin.install "example-goreleaser-service"
-        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_arm64.tar.gz"
-      sha256 "55e749e9e1601edc7a1ce3adfc532e6701e1fdf327db92ea01831183de439d68"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.14/example-goreleaser-service_0.0.14_Linux_armv6.tar.gz"
+      sha256 "6830b7d67bc46cc570edfc87104610abbf1814be4c32c6ffec33ca0e1c6cef29"
 
       def install
         bin.install "example-goreleaser-service"
-        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
+  end
+
+  def post_install
+    (var/"lib/example-goreleaser-service").mkpath
+  end
+
+  service do
+    run opt_bin/"example-goreleaser-service"
+    log_path var/"log/example-goreleaser-service-stdout.log"
+    error_log_path var/"log/example-goreleaser-service-stderr.log"
+    working_dir var/"lib/example-goreleaser-service"
   end
 end
