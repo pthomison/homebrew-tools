@@ -5,22 +5,22 @@
 class K3dAsAService < Formula
   desc ""
   homepage ""
-  version "0.0.4"
+  version "0.0.5"
 
   depends_on "k3d"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.4/k3d-as-a-service_0.0.4_Darwin_x86_64.tar.gz"
-      sha256 "584f6f75af0bb308a330e4ef07c7edd65a141f016e593f53aa1d8d146cc5d8f6"
+      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.5/k3d-as-a-service_0.0.5_Darwin_x86_64.tar.gz"
+      sha256 "7c845ecebe87b689137bf1f3149d02285397e0a81004904ac44f728691d72d0f"
 
       def install
         bin.install "k3d-as-a-service"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.4/k3d-as-a-service_0.0.4_Darwin_arm64.tar.gz"
-      sha256 "9f3f9798d9dbd8e5d3a43284b32ec6747d4b2950788eeb992ba8834589a65284"
+      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.5/k3d-as-a-service_0.0.5_Darwin_arm64.tar.gz"
+      sha256 "df048a9f6c2236622645bead74be153683521e0427e3c070c8db7a47050959ff"
 
       def install
         bin.install "k3d-as-a-service"
@@ -30,24 +30,24 @@ class K3dAsAService < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.4/k3d-as-a-service_0.0.4_Linux_armv6.tar.gz"
-      sha256 "eb5ea07c14cfe25fd35e8c078604505603b5bd36e831e431e3981143c24a8386"
+      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.5/k3d-as-a-service_0.0.5_Linux_armv6.tar.gz"
+      sha256 "4463fd94a1b1b8f1b4d42744625df7b032a9241b23fe74eb5d4605fc42dba965"
 
       def install
         bin.install "k3d-as-a-service"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.4/k3d-as-a-service_0.0.4_Linux_x86_64.tar.gz"
-      sha256 "464bcce6a5021e3e6d4677c45359b5d2297f7c595bd60e54e6bb111aefc86ad4"
+      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.5/k3d-as-a-service_0.0.5_Linux_x86_64.tar.gz"
+      sha256 "e79df8c0fc92a7f89a89bc9c6cac6742b71ec60e84dcbbbd8acc105ed01a75fa"
 
       def install
         bin.install "k3d-as-a-service"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.4/k3d-as-a-service_0.0.4_Linux_arm64.tar.gz"
-      sha256 "c03b821281889612f026742a62a5bacc34d14ff417a5408048cdaac4cf0f6d66"
+      url "https://github.com/pthomison/k3d-as-a-service/releases/download/v0.0.5/k3d-as-a-service_0.0.5_Linux_arm64.tar.gz"
+      sha256 "85c9c182e652613c9e7276f3e8c0b9eef744bfa7c11882d4125ec592ff20cdfb"
 
       def install
         bin.install "k3d-as-a-service"
@@ -56,7 +56,7 @@ class K3dAsAService < Formula
   end
 
   service do
-    working_dir /Users/pthomison/Projects/kubernetes/flux-environments
     run ["/usr/bin/make", "k3d-bootstrap"]
+    working_dir "/Users/pthomison/Projects/kubernetes/flux-environments"
   end
 end
