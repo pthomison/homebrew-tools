@@ -5,62 +5,56 @@
 class ExampleGoreleaserService < Formula
   desc ""
   homepage ""
-  version "0.0.12"
+  version "0.0.13"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Darwin_x86_64.tar.gz"
-      sha256 "17b76799a3f7741edea99fb983efe7b4afb7352ad418cd4739f3fef6d6f7529e"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Darwin_x86_64.tar.gz"
+      sha256 "164ca027ba3b0e73b2b15f0083d02dea9f70fe0f98ccc13e4e0917e18400e8e7"
 
       def install
         bin.install "example-goreleaser-service"
+        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Darwin_arm64.tar.gz"
-      sha256 "a5f6c62c7c77704eabc0a9642152e33b5e4c201c4f136aff89818f9e390c581b"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Darwin_arm64.tar.gz"
+      sha256 "a540228f9a9d373e4c35f5a132132073139289e3643ec10b937528e25ecc72c6"
 
       def install
         bin.install "example-goreleaser-service"
+        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_armv6.tar.gz"
-      sha256 "a6ddebc7afc1fd8ce48d450bbc5c9933a965f84f9afa7c6d7d3c10e63a892bd7"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_armv6.tar.gz"
+      sha256 "3599ac65448b4f1602b7639cd6f062700b4a4c51b72a7c73cf916a7dfb5fb700"
 
       def install
         bin.install "example-goreleaser-service"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_arm64.tar.gz"
-      sha256 "2aa9697c12274d640dd83ac73459b9805b237f42fb1c4b2894f1ffaf34bf47cb"
-
-      def install
-        bin.install "example-goreleaser-service"
+        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/example-goreleaser-systemd-service/releases/download/v0.0.12/example-goreleaser-service_0.0.12_Linux_x86_64.tar.gz"
-      sha256 "bacff06f47a2a49993694940a7db7f332422ced9ee695929de21233631fba6d4"
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_x86_64.tar.gz"
+      sha256 "be95152d502110e842ca00ab97cbd388d88b675667636df0dd6d218c46710f9a"
 
       def install
         bin.install "example-goreleaser-service"
+        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
       end
     end
-  end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/example-goreleaser-service/releases/download/v0.0.13/example-goreleaser-service_0.0.13_Linux_arm64.tar.gz"
+      sha256 "55e749e9e1601edc7a1ce3adfc532e6701e1fdf327db92ea01831183de439d68"
 
-  def post_install
-    (var/"lib/example-goreleaser-service").mkpath
-  end
-
-  service do
-    run opt_bin/"example-goreleaser-service"
-    log_path var/"log/example-goreleaser-service-stdout.log"
-    error_log_path var/"log/example-goreleaser-service-stderr.log"
-    working_dir var/"lib/example-goreleaser-service"
+      def install
+        bin.install "example-goreleaser-service"
+        prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
+      end
+    end
   end
 end
