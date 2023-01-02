@@ -5,12 +5,12 @@
 class Exoskeleton < Formula
   desc ""
   homepage ""
-  version "0.1.19"
+  version "0.1.20"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.19/exoskeleton_0.1.19_darwin_amd64.tar.gz"
-      sha256 "ab60d409bb55670884c485583c35e7bbf7b643d54323813cac2b2d9b7d75510c"
+      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.20/exoskeleton_0.1.20_darwin_amd64.tar.gz"
+      sha256 "4c75d944e9de6e6231802595382914b8f30d42eb3653351e01bff3383b85da9b"
 
       def install
         bin.install "exoskeleton"
@@ -18,8 +18,8 @@ class Exoskeleton < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.19/exoskeleton_0.1.19_darwin_arm64.tar.gz"
-      sha256 "c32ca013bc92309b17c158252958d2795ef87c25b138c0ae2154802fb4869998"
+      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.20/exoskeleton_0.1.20_darwin_arm64.tar.gz"
+      sha256 "5277eed1ee0487bbb254d5b15aff64b984c0b7ef85ce0bf77bf279af9918f817"
 
       def install
         bin.install "exoskeleton"
@@ -29,9 +29,9 @@ class Exoskeleton < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.19/exoskeleton_0.1.19_linux_arm64.tar.gz"
-      sha256 "e15fe78e6b9972ecaf5c6f49c5170b4389e3189bccda24ecfd79fa63cef8b058"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.20/exoskeleton_0.1.20_linux_armv6.tar.gz"
+      sha256 "5b126d4b593a08594b3e5a1692c2f491a14441a4fe3739d245123b5a06b6e081"
 
       def install
         bin.install "exoskeleton"
@@ -39,17 +39,17 @@ class Exoskeleton < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.19/exoskeleton_0.1.19_linux_amd64.tar.gz"
-      sha256 "d916fe39d4d13c227cb04c1d50744f79ecfdde4337cae46babb2a19e768309ab"
+      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.20/exoskeleton_0.1.20_linux_amd64.tar.gz"
+      sha256 "b0d9cf58df84ccaa51f206b4ca37e8746634c16b4081516b332745b6182fde66"
 
       def install
         bin.install "exoskeleton"
         ln_s bin/"exoskeleton", bin/"exo"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.19/exoskeleton_0.1.19_linux_armv6.tar.gz"
-      sha256 "205bf0a5e3bdc7634803df73d6dc474a4fbdad371ee57d9f840d02b81d41bc51"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pthomison/exoskeleton/releases/download/v0.1.20/exoskeleton_0.1.20_linux_arm64.tar.gz"
+      sha256 "064e797014439dcc06dfa061f2793b8f3b588056b58fc505de85998b5d72d41a"
 
       def install
         bin.install "exoskeleton"
