@@ -5,20 +5,20 @@
 class Wikindexer < Formula
   desc ""
   homepage ""
-  version "0.0.3"
+  version "0.0.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_darwin_arm64.tar.gz"
-      sha256 "ec7be15d8f83288c80afd725a057819b380fe5e5438157e8ee6231971438d9f8"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.4/wikindexer_0.0.4_darwin_arm64.tar.gz"
+      sha256 "0e142a3f014a4ce739ad9c2f02ce4314f58e3c8489ebabdf799a454704e72424"
 
       def install
         bin.install "wikindexer-collector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_darwin_amd64.tar.gz"
-      sha256 "49b8b5e82a59bf721aee2d39f28eb79b56bb8c16617551d0be52a2e049034d32"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.4/wikindexer_0.0.4_darwin_amd64.tar.gz"
+      sha256 "22410d7a33e8aa0977fae4c29f4e595c93d8c33dbfd80cfe81d6267c35256af0"
 
       def install
         bin.install "wikindexer-collector"
@@ -28,16 +28,16 @@ class Wikindexer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_linux_arm64.tar.gz"
-      sha256 "eb4694e4bd9de1d1959cf6df9148a8de9cd26399d8a0999ebe8f7bd06a749495"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.4/wikindexer_0.0.4_linux_arm64.tar.gz"
+      sha256 "97f2dc3a3e921863767b4a93e7369894a6130da1ca5064efd5b45238398c019e"
 
       def install
         bin.install "wikindexer-collector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_linux_amd64.tar.gz"
-      sha256 "e031ecc5d370fff95e56e5f123a9daa0e0a789d56526d9afa245ef6544d2fe7c"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.4/wikindexer_0.0.4_linux_amd64.tar.gz"
+      sha256 "7660a66f97d1b2b1026eb69b6794205816143451db93706b5cd9c6a151975718"
 
       def install
         bin.install "wikindexer-collector"
@@ -50,9 +50,9 @@ class Wikindexer < Formula
   end
 
   service do
-    run opt_bin/"wikindexer"
-    log_path var/"log/wikindexer-stdout.log"
-    error_log_path var/"log/wikindexer-stderr.log"
+    run opt_bin/"wikindexer-collector"
+    log_path var/"log/wikindexer-collector-stdout.log"
+    error_log_path var/"log/wikindexer-collector-stderr.log"
     working_dir var/"lib/wikindexer"
   end
 end
