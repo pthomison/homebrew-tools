@@ -5,42 +5,42 @@
 class Wikindexer < Formula
   desc ""
   homepage ""
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_darwin_arm64.tar.gz"
-      sha256 "3236f4417df5bbdba1ad755b57d83ade780ab25e6020fddb46d5d8edd05f2379"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_darwin_arm64.tar.gz"
+      sha256 "ec7be15d8f83288c80afd725a057819b380fe5e5438157e8ee6231971438d9f8"
 
       def install
-        bin.install "wikindexer"
+        bin.install "wikindexer-collector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_darwin_amd64.tar.gz"
-      sha256 "079396ce86842fb9a21d86525e8098c8a9b22513a1625ca984a85c0b4f5040eb"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_darwin_amd64.tar.gz"
+      sha256 "49b8b5e82a59bf721aee2d39f28eb79b56bb8c16617551d0be52a2e049034d32"
 
       def install
-        bin.install "wikindexer"
+        bin.install "wikindexer-collector"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_linux_arm64.tar.gz"
-      sha256 "7b8479c993cfcefae51b83c019525db243cc50d990381c7653b9ae2c3b30fbab"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_linux_arm64.tar.gz"
+      sha256 "eb4694e4bd9de1d1959cf6df9148a8de9cd26399d8a0999ebe8f7bd06a749495"
 
       def install
-        bin.install "wikindexer"
+        bin.install "wikindexer-collector"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_linux_amd64.tar.gz"
-      sha256 "943a294d727f112bd835c8f0d8a6148c64c5c9167e89a3802057edf3d2b07ebb"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.3/wikindexer_0.0.3_linux_amd64.tar.gz"
+      sha256 "e031ecc5d370fff95e56e5f123a9daa0e0a789d56526d9afa245ef6544d2fe7c"
 
       def install
-        bin.install "wikindexer"
+        bin.install "wikindexer-collector"
       end
     end
   end
