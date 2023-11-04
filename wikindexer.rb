@@ -5,20 +5,20 @@
 class Wikindexer < Formula
   desc ""
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.1/wikindexer_0.0.1_darwin_arm64.tar.gz"
-      sha256 "19bb5b7df0c6bb74465784b73169697133431d50082a01f6de1246e7d19033a5"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_darwin_arm64.tar.gz"
+      sha256 "3236f4417df5bbdba1ad755b57d83ade780ab25e6020fddb46d5d8edd05f2379"
 
       def install
         bin.install "wikindexer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.1/wikindexer_0.0.1_darwin_amd64.tar.gz"
-      sha256 "faa74957c41f2bb2f0c8e55f17630745f44d0e4f126eadd52f971c8828b8a944"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_darwin_amd64.tar.gz"
+      sha256 "079396ce86842fb9a21d86525e8098c8a9b22513a1625ca984a85c0b4f5040eb"
 
       def install
         bin.install "wikindexer"
@@ -28,16 +28,16 @@ class Wikindexer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.1/wikindexer_0.0.1_linux_arm64.tar.gz"
-      sha256 "a6108864a4f7d7b526d03abe0ac8e17bf5b8aa9f1c9af8dd403fef142cdd5205"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_linux_arm64.tar.gz"
+      sha256 "7b8479c993cfcefae51b83c019525db243cc50d990381c7653b9ae2c3b30fbab"
 
       def install
         bin.install "wikindexer"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.1/wikindexer_0.0.1_linux_amd64.tar.gz"
-      sha256 "b1120f2a3a28a949f83b5a13f6ed51ae250a33695329d401873dfbcf92472279"
+      url "https://github.com/pthomison/wikindexer/releases/download/v0.0.2/wikindexer_0.0.2_linux_amd64.tar.gz"
+      sha256 "943a294d727f112bd835c8f0d8a6148c64c5c9167e89a3802057edf3d2b07ebb"
 
       def install
         bin.install "wikindexer"
