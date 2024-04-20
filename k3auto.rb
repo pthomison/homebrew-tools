@@ -5,20 +5,20 @@
 class K3auto < Formula
   desc ""
   homepage ""
-  version "0.0.14"
+  version "0.0.15"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/k3auto/releases/download/v0.0.14/k3auto_0.0.14_darwin_amd64.tar.gz"
-      sha256 "74e16fbc82fcbad02044ce202f293d638c007226b2e69e6e48cc8dd5ed524dda"
+      url "https://github.com/pthomison/k3auto/releases/download/v0.0.15/k3auto_0.0.15_darwin_amd64.tar.gz"
+      sha256 "feeb0da92ba2ec4ae39f0f9f4c5bfe27618bf410132ab33e6ffbea4f82eeae49"
 
       def install
         bin.install "k3auto"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/k3auto/releases/download/v0.0.14/k3auto_0.0.14_darwin_arm64.tar.gz"
-      sha256 "564ca7669861e757bdc04f1e139efbc44ccb962d3c288a0db1b5d654c27efd44"
+      url "https://github.com/pthomison/k3auto/releases/download/v0.0.15/k3auto_0.0.15_darwin_arm64.tar.gz"
+      sha256 "b412564173fd585aab0312913ec78911301381e8d86cc5f1d2576958a41e2b85"
 
       def install
         bin.install "k3auto"
@@ -28,24 +28,24 @@ class K3auto < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/k3auto/releases/download/v0.0.14/k3auto_0.0.14_linux_amd64.tar.gz"
-      sha256 "75174043dcfdab071361e9003cbb77995705ceb283caf11ce1a948a2ae6993be"
+      url "https://github.com/pthomison/k3auto/releases/download/v0.0.15/k3auto_0.0.15_linux_amd64.tar.gz"
+      sha256 "f084d688cdcea131af6362135edf749b1475d4a01ba7539f507eb20a7f8d8506"
 
       def install
         bin.install "k3auto"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/k3auto/releases/download/v0.0.14/k3auto_0.0.14_linux_armv6.tar.gz"
-      sha256 "18d0b398ba1ffff0665ead63317bb94ece7ba3e9fca70c53392004fb4e831e14"
+      url "https://github.com/pthomison/k3auto/releases/download/v0.0.15/k3auto_0.0.15_linux_armv6.tar.gz"
+      sha256 "cd96aead79d61ed796df25ec17de77cea46c23db3eef24ed11387137610885f0"
 
       def install
         bin.install "k3auto"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pthomison/k3auto/releases/download/v0.0.14/k3auto_0.0.14_linux_arm64.tar.gz"
-      sha256 "a5333f698a12469c99d14d8ee331aeda42fd5a0d698f20110d1289a3870752a2"
+      url "https://github.com/pthomison/k3auto/releases/download/v0.0.15/k3auto_0.0.15_linux_arm64.tar.gz"
+      sha256 "6900dfbca7078dbc9ee9e245c40195533cac255f4691f209f157d326ea0a95c9"
 
       def install
         bin.install "k3auto"
