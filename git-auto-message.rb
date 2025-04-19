@@ -5,14 +5,20 @@
 class GitAutoMessage < Formula
   desc ""
   homepage ""
-  version "0.0.4"
+  version "0.0.1"
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/pthomison/git-auto-message/releases/download/v0.0.1/git-auto-message_Darwin_x86_64.tar.gz"
+      sha256 "fc604e3f4da1e91629e72ca48df2d1c8499e35a9c3f4180affe69237a6fbd6d5"
+
+      def install
+        bin.install "git-auto-message"
+      end
+    end
     if Hardware::CPU.arm?
-      url "git@github.com:pthomison/git-auto-message.git",
-        tag: "v0.0.4", 
-        using: GitDownloadStrategy
-      # sha256 "2c2034b1b34387142c0a0add4e643cc4c8f60beab912e1af5cd6678bea0588ba"
+      url "https://github.com/pthomison/git-auto-message/releases/download/v0.0.1/git-auto-message_Darwin_arm64.tar.gz"
+      sha256 "4ecab741425eaf5e514561f66202a529a72ec7521b319f43c52d7b49cd85a3b4"
 
       def install
         bin.install "git-auto-message"
@@ -20,4 +26,26 @@ class GitAutoMessage < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pthomison/git-auto-message/releases/download/v0.0.1/git-auto-message_Linux_x86_64.tar.gz"
+        sha256 "a3a8f71bfd44d77c4c94a948968f5a0bd2140e939bc1fd149220eb551364c4ee"
+
+        def install
+          bin.install "git-auto-message"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pthomison/git-auto-message/releases/download/v0.0.1/git-auto-message_Linux_arm64.tar.gz"
+        sha256 "df2ddd92a0ee755faa4e6af4e6e05e751700e12fcd1ddf8df5f3d31bf68df4a0"
+
+        def install
+          bin.install "git-auto-message"
+        end
+      end
+    end
+  end
 end
