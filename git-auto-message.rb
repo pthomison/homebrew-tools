@@ -9,7 +9,9 @@ class GitAutoMessage < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "git@github.com:pthomison/git-auto-message.git", using: GitDownloadStrategy
+      url "git@github.com:pthomison/git-auto-message.git",
+        tag: "v0.0.4", 
+        using: GitDownloadStrategy
       # sha256 "2c2034b1b34387142c0a0add4e643cc4c8f60beab912e1af5cd6678bea0588ba"
 
       def install
