@@ -5,20 +5,20 @@
 class TailscaleDnsReflector < Formula
   desc ""
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.1/tailscale-dns-reflector_Darwin_x86_64.tar.gz"
-      sha256 "a72b5dc01f6289f0b592f593309b522101a860003de4e2aece8f494aadcb765c"
+      url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.2/tailscale-dns-reflector_Darwin_x86_64.tar.gz"
+      sha256 "a7e37080c288f3fedcbc80f0dd1b509f4a590863aaf3310de9efc3b4ab69ce84"
 
       def install
         bin.install "tailscale-dns-reflector"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.1/tailscale-dns-reflector_Darwin_arm64.tar.gz"
-      sha256 "922e91a6a3649fad1e8bd44d3fbdaea9c2861391c014a3c8f01b61d40457545f"
+      url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.2/tailscale-dns-reflector_Darwin_arm64.tar.gz"
+      sha256 "0b108c3ccaf5058be5414c922de8f0536b7ca4f0b488c8b2e9e50559daccfe3f"
 
       def install
         bin.install "tailscale-dns-reflector"
@@ -29,8 +29,8 @@ class TailscaleDnsReflector < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.1/tailscale-dns-reflector_Linux_x86_64.tar.gz"
-        sha256 "c1bb7e7a38e1cb484590c8259e659e1410bf93af4478e4f6026d1676de17de82"
+        url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.2/tailscale-dns-reflector_Linux_x86_64.tar.gz"
+        sha256 "ced2a014dc2bf11a5dae007fb38a28a58f94385d25f883d7daff477b3ec31565"
 
         def install
           bin.install "tailscale-dns-reflector"
@@ -39,8 +39,8 @@ class TailscaleDnsReflector < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.1/tailscale-dns-reflector_Linux_arm64.tar.gz"
-        sha256 "4829c19b6dd5555157a2f5eb80a10dc85c9a427a958222801443f5d551f75886"
+        url "https://github.com/pthomison/tailscale-dns-reflector/releases/download/v0.0.2/tailscale-dns-reflector_Linux_arm64.tar.gz"
+        sha256 "7a97e63d77305be81f6b2f304469d19c3873107f116ac70cb57bf3981f02689b"
 
         def install
           bin.install "tailscale-dns-reflector"
