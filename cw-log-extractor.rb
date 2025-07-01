@@ -10,7 +10,7 @@ class CwLogExtractor < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/pthomison/cw-log-extractor/releases/download/v0.0.1/cw-log-extractor_Darwin_x86_64.tar.gz"
-      sha256 "d88f88b88a1872c1e846dbd6ce61d013a73e437a3dc6f516f510e6569dba3dfd"
+      sha256 "88aff0184933ee1f8fd5acb6201c9f5fa095f8ac044aad6eb0c09af60d5af2ef"
 
       def install
         bin.install "cw-log-extractor"
@@ -18,7 +18,7 @@ class CwLogExtractor < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/pthomison/cw-log-extractor/releases/download/v0.0.1/cw-log-extractor_Darwin_arm64.tar.gz"
-      sha256 "6f6248d580ae4f47716b72bec2935722e9fabd8bf934430f5757481135c62b3c"
+      sha256 "63d664432170f8011243154d1dc9cafdb586940366a22c3cffd00bad6d817760"
 
       def install
         bin.install "cw-log-extractor"
@@ -29,14 +29,14 @@ class CwLogExtractor < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/pthomison/cw-log-extractor/releases/download/v0.0.1/cw-log-extractor_Linux_x86_64.tar.gz"
-      sha256 "0a3a7b5f140a1890a8aa7e035599772349f4355201e539871b15209a98786ffc"
+      sha256 "de5ee9849e29d4abbd6696165a85b36dbb6b755986b5bdadfb53c98e50116ed5"
       def install
         bin.install "cw-log-extractor"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/pthomison/cw-log-extractor/releases/download/v0.0.1/cw-log-extractor_Linux_arm64.tar.gz"
-      sha256 "96f5416e5ba123a1760b674b863681ef237b24800ae04d08cd6b22b50d9aeaba"
+      sha256 "2cfd587ce1686dea14b8f437c41f915099141be15ead0cd478f2c4d80d08f602"
       def install
         bin.install "cw-log-extractor"
       end
